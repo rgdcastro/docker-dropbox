@@ -1,13 +1,13 @@
 # Dropbox in Docker
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/janeczku/dropbox.svg?maxAge=2592000)][hub]
+[![Docker Pulls](https://img.shields.io/docker/pulls/rgdcastro/docker-dropbox.svg?maxAge=2592000)][hub]
 [![License](https://img.shields.io/github/license/janeczku/docker-alpine-kubernetes.svg?maxAge=2592000)]()
 
-[hub]: https://hub.docker.com/r/janeczku/dropbox/
+[hub]: https://hub.docker.com/r/rgdcastro/docker-dropbox
 
 Run Dropbox inside Docker. Fully working with local host folder mount or inter-container linking (via `--volumes-from`).
 
-This repository provides the [janeczku/dropbox](https://registry.hub.docker.com/u/janeczku/dropbox/) image.
+This repository provides the [rgdcastro/docker-dropbox](https://registry.hub.docker.com/u/rgdcastro/docker-dropbox/) image based on janeczku/dropbox.
 
 ## Usage examples
 
@@ -27,13 +27,13 @@ This fixes file permission errrors that might occur when mounting the Dropbox fi
     docker run -d --restart=always --name=dropbox \
     -e DBOX_UID=110 \
     -e DBOX_GID=200 \
-    janeczku/dropbox
+    rgdcastro/docker-dropbox
 
 ### Enable LAN Sync
 
     docker run -d --restart=always --name=dropbox \
     --net="host" \
-    janeczku/dropbox
+    rgdcastro/docker-dropbox
 
 ## Linking to Dropbox account after first start
 
@@ -51,7 +51,7 @@ You should see something like this:
 
 ## Manage exclusions and check sync status
 
-    docker exec -t -i dropbox dropbox help
+    docker exec -t -i dropbox dropbox.py help
 
 ## ENV variables
 
